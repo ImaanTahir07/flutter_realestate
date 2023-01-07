@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:flutter_realestate/view/screens/filtersScr.dart';
+import 'package:flutter_realestate/view/screens/rentScr.dart';
 import 'package:flutter_realestate/view/widgets/BlogCards.dart';
 import 'package:flutter_realestate/view/widgets/gradientContainer.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -29,27 +31,45 @@ class _HomeScrState extends State<HomeScr> {
                 Padding(
                   padding: const EdgeInsets.only(top: 14, right: 8, left: 14),
                   child: Row(
-                    children: const [
-                      gradientContainer(
-                          colorMain: Color.fromARGB(255, 43, 77, 106),
-                          txt: "Rent",
-                          icon: Icon(FontAwesomeIcons.userGroup,
-                              color: Colors.white, size: 45),
-                          color1: Color.fromARGB(255, 69, 204, 222),
-                          color2: Color.fromARGB(255, 210, 225, 252)),
-                      SizedBox(
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => filtersScr(),
+                              ));
+                        },
+                        child: const gradientContainer(
+                            colorMain: Color.fromARGB(255, 43, 77, 106),
+                            txt: "Rent",
+                            icon: Icon(FontAwesomeIcons.userGroup,
+                                color: Colors.white, size: 45),
+                            color1: Color.fromARGB(255, 69, 204, 222),
+                            color2: Color.fromARGB(255, 210, 225, 252)),
+                      ),
+                      const SizedBox(
                         width: 17,
                       ),
-                      gradientContainer(
-                          colorMain: Color.fromARGB(255, 81, 58, 34),
-                          txt: "Buy",
-                          icon: Icon(
-                            FontAwesomeIcons.play,
-                            size: 50,
-                            color: Colors.white,
-                          ),
-                          color1: Color.fromARGB(249, 249, 149, 67),
-                          color2: Color.fromARGB(249, 255, 185, 119))
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => filtersScr(),
+                              ));
+                        },
+                        child: const gradientContainer(
+                            colorMain: Color.fromARGB(255, 81, 58, 34),
+                            txt: "Buy",
+                            icon: Icon(
+                              FontAwesomeIcons.play,
+                              size: 50,
+                              color: Colors.white,
+                            ),
+                            color1: Color.fromARGB(249, 249, 149, 67),
+                            color2: Color.fromARGB(249, 255, 185, 119)),
+                      )
                     ],
                   ),
                 ),
